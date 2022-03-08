@@ -1,0 +1,14 @@
+name: sns-app-ts-plugin
+description: Plugin for subscribing to an SNS topic.
+types:
+  - app
+inputs:
+  - label: Project name
+    type: text
+    name: project_name
+  - label: Topic ARN
+    type: text
+    name: topic_arn
+computedInputs:
+  app_class_name: "{{ inputs.project_name|replace('_', '-')|replace(' ', '-')|title|replace('-', '') }}"
+  project_name: "{{ inputs.project_name|replace('_', '-')|replace(' ', '-')|lower }}"
