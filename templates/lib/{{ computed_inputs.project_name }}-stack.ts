@@ -7,7 +7,7 @@ class {{ computed_inputs.app_class_name }}Stack extends Stack {
     super(scope, id, props);
 
     SnsAppJsiiComponent.addSubscription(
-      scope,
+      this,
       '{{ inputs.topic_arn }}',
       destinatedLambda
     );
